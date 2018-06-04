@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+ 	RewriteEngine on 
+ 	# admin.zaoing.com
+
+    # 跨域访问支持
+#    Header set Access-Control-Allow-Origin "*"
+#    Header set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Access-Control-Allow-Origin, Authorization, Accept"
+#    Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+#    Header set Access-Control-Max-Age 1728000
+
+	# If a directory or a file exists, use the request directly 
+	RewriteCond %{REQUEST_FILENAME} !-f           
+	RewriteCond %{REQUEST_FILENAME} !-d           
+	# Otherwise forward the request to index.php  
+	RewriteRule . index.php [L]
+</IfModule>
